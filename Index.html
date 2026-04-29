@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consulta de CEP</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>📍 Consulta de CEP</h1>
+    <p>Informe um CEP para consultar o endereço completo.</p>
+  </header>
+
+  <div class="card search-card">
+    <label for="cepInput">CEP</label>
+    <div class="input-row">
+      <input id="cepInput" type="text" placeholder="00000-000" maxlength="9" inputmode="numeric" autocomplete="postal-code"/>
+      <button id="btnBuscar">Buscar</button>
+    </div>
+    <p class="hint">Digite o CEP e pressione Enter ou clique em Buscar.</p>
+    <div class="error" id="erro"></div>
+  </div>
+
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    Consultando endereço…
+  </div>
+
+  <div class="card result-card" id="resultado">
+    <div class="result-header">
+      <h2>Endereço encontrado</h2>
+      <span class="cep-badge" id="cepBadge">—</span>
+    </div>
+    <div class="addr-main">
+      <div class="street" id="rLogradouro">—</div>
+      <div class="complement" id="rComplemento"></div>
+    </div>
+    <table id="tabelaDados"></table>
+  </div>
+
+  <div class="history" id="historico" style="display:none">
+    <h3>Buscas recentes</h3>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <footer>
+    Dados fornecidos por <a href="https://viacep.com.br" target="_blank">viacep.com.br</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

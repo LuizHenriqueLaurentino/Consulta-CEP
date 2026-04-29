@@ -1,0 +1,214 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f7ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+  color: #1a1a2e;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a7f4f;
+}
+header p {
+  color: #5a7a8a;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ── Cards ── */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+}
+.search-card { margin-bottom: 20px; }
+
+/* ── Input ── */
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3a5a6a;
+  margin-bottom: 8px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+input[type="text"] {
+  flex: 1;
+  border: 1.5px solid #b0d4e8;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="text"]:focus { border-color: #1a9e6b; }
+input[type="text"]::placeholder { color: #aac4d0; letter-spacing: 1px; font-size: 14px; }
+
+/* ── Button ── */
+button {
+  background: #1a9e6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+button:hover { background: #158055; }
+button:disabled { background: #a0c8b8; cursor: not-allowed; }
+
+.hint { font-size: 12px; color: #90aab8; margin-top: 8px; }
+
+/* ── Error ── */
+.error {
+  display: none;
+  background: #fff0f3;
+  border: 1px solid #f5aab8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #c0304a;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.error.show { display: block; }
+
+/* ── Loader ── */
+.loader {
+  display: none;
+  text-align: center;
+  padding: 28px 0;
+  color: #5a8a9a;
+  font-size: 13px;
+}
+.loader.show { display: block; }
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #d0eaf5;
+  border-top-color: #1a9e6b;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 10px;
+}
+
+/* ── Result ── */
+.result-card { display: none; }
+.result-card.show { display: block; }
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid #e0f0f8;
+}
+.result-header h2 {
+  font-size: 15px;
+  color: #1a7f4f;
+  font-weight: 700;
+}
+.cep-badge {
+  background: #e8f7f1;
+  color: #1a7f4f;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+.addr-main { margin-bottom: 18px; }
+.addr-main .street {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.addr-main .complement {
+  font-size: 13px;
+  color: #7a9aaa;
+  margin-top: 4px;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+tr { border-bottom: 1px solid #edf5fa; }
+tr:last-child { border-bottom: none; }
+td { padding: 9px 4px; vertical-align: middle; }
+td:first-child {
+  width: 38%;
+  color: #6a8a9a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+td:last-child { color: #1a1a2e; font-size: 14px; }
+.empty { color: #b0c8d0; font-style: italic; font-size: 13px; }
+
+/* ── History ── */
+.history {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 520px;
+}
+.history h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a9aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: #fff;
+  border: 1.5px solid #b0d4e8;
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-size: 12px;
+  color: #3a6a8a;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.chip:hover { border-color: #1a9e6b; color: #1a7f4f; background: #f0faf5; }
+
+/* ── Footer ── */
+footer {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #90aab8;
+}
+footer a { color: #1a9e6b; text-decoration: none; }
+
+/* ── Animation ── */
+@keyframes spin { to { transform: rotate(360deg); } }
