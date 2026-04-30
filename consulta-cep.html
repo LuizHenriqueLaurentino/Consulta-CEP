@@ -211,7 +211,7 @@
 <body>
 
   <header>
-    <h1>📍 Consulta de CEP</h1>
+    <h1>Consulta de CEP</h1>
     <p>Informe um CEP para consultar o endereço completo.</p>
   </header>
 
@@ -296,7 +296,7 @@
       loader.className = 'loader';
 
       if (raw.length !== 8) {
-        erroBox.textContent = '⚠️ Digite um CEP válido com 8 dígitos.';
+        erroBox.textContent = 'Digite um CEP válido com 8 dígitos.';
         erroBox.className = 'error show';
         return;
       }
@@ -310,7 +310,7 @@
         const d = await res.json();
 
         if (d.erro) {
-          erroBox.textContent = '❌ CEP não encontrado. Verifique e tente novamente.';
+          erroBox.textContent = 'CEP não encontrado. Verifique e tente novamente.';
           erroBox.className = 'error show';
           return;
         }
@@ -319,7 +319,7 @@
         salvarHist(d.cep, d.localidade, d.uf);
 
       } catch {
-        erroBox.textContent = '❌ Erro ao conectar à API. Verifique sua conexão.';
+        erroBox.textContent = 'Erro ao conectar à API. Verifique sua conexão.';
         erroBox.className = 'error show';
       } finally {
         loader.className = 'loader';
