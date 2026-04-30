@@ -10,8 +10,7 @@ body {
   padding: 40px 16px;
   color: #1a1a2e;
 }
-
-/* ── Header ── */
+/*Header */ 
 header {
   text-align: center;
   margin-bottom: 32px;
@@ -27,7 +26,7 @@ header p {
   margin-top: 6px;
 }
 
-/* ── Cards ── */
+/*Cards */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -38,7 +37,7 @@ header p {
 }
 .search-card { margin-bottom: 20px; }
 
-/* ── Input ── */
+/*Input */
 label {
   display: block;
   font-size: 13px;
@@ -65,7 +64,7 @@ input[type="text"] {
 input[type="text"]:focus { border-color: #1a9e6b; }
 input[type="text"]::placeholder { color: #aac4d0; letter-spacing: 1px; font-size: 14px; }
 
-/* ── Button ── */
+/*Button */
 button {
   background: #1a9e6b;
   color: #fff;
@@ -83,7 +82,7 @@ button:disabled { background: #a0c8b8; cursor: not-allowed; }
 
 .hint { font-size: 12px; color: #90aab8; margin-top: 8px; }
 
-/* ── Error ── */
+/*Error */
 .error {
   display: none;
   background: #fff0f3;
@@ -96,7 +95,7 @@ button:disabled { background: #a0c8b8; cursor: not-allowed; }
 }
 .error.show { display: block; }
 
-/* ── Loader ── */
+/*Loader */
 .loader {
   display: none;
   text-align: center;
@@ -115,7 +114,7 @@ button:disabled { background: #a0c8b8; cursor: not-allowed; }
   margin: 0 auto 10px;
 }
 
-/* ── Result ── */
+/*Result */
 .result-card { display: none; }
 .result-card.show { display: block; }
 
@@ -155,7 +154,7 @@ button:disabled { background: #a0c8b8; cursor: not-allowed; }
   margin-top: 4px;
 }
 
-/* ── Table ── */
+/*Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -175,7 +174,7 @@ td:first-child {
 td:last-child { color: #1a1a2e; font-size: 14px; }
 .empty { color: #b0c8d0; font-style: italic; font-size: 13px; }
 
-/* ── History ── */
+/*History */
 .history {
   margin-top: 20px;
   width: 100%;
@@ -202,7 +201,7 @@ td:last-child { color: #1a1a2e; font-size: 14px; }
 }
 .chip:hover { border-color: #1a9e6b; color: #1a7f4f; background: #f0faf5; }
 
-/* ── Footer ── */
+/*Footer */
 footer {
   margin-top: 40px;
   font-size: 12px;
@@ -210,5 +209,5 @@ footer {
 }
 footer a { color: #1a9e6b; text-decoration: none; }
 
-/* ── Animation ── */
+/*Animation */
 @keyframes spin { to { transform: rotate(360deg); } }
