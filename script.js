@@ -4,22 +4,22 @@ const resultado = document.getElementById('resultado');
 const erroBox   = document.getElementById('erro');
 const btnBuscar = document.getElementById('btnBuscar');
 
-// ── Máscara automática do CEP ──
+//Máscara CEP 
 input.addEventListener('input', () => {
   let v = input.value.replace(/\D/g, '').slice(0, 8);
   if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5);
   input.value = v;
 });
 
-// ── Busca ao pressionar Enter ──
+//Busca ao pressionar Enter
 input.addEventListener('keydown', e => {
   if (e.key === 'Enter') buscarCEP();
 });
 
-// ── Busca ao clicar no botão ──
+//Busca ao clicar no botão
 btnBuscar.addEventListener('click', buscarCEP);
 
-// ── Histórico de buscas (sessão) ──
+//Histórico
 let hist = JSON.parse(sessionStorage.getItem('hist') || '[]');
 
 function salvarHist(cep, local, uf) {
@@ -45,18 +45,18 @@ function buscarDireto(cep) {
   buscarCEP();
 }
 
-// ── Função principal de busca ──
+//Função busca
 async function buscarCEP() {
   const raw = input.value.replace(/\D/g, '');
 
-  // Limpa estados anteriores
+  // Limpar
   erroBox.className = 'error';
   resultado.className = 'card result-card';
   loader.className = 'loader';
 
   // Validação
   if (raw.length !== 8) {
-    erroBox.textContent = '⚠️ Digite um CEP válido com 8 dígitos.';
+    erroBox.textContent = ' Digite um CEP válido com 8 dígitos.';
     erroBox.className = 'error show';
     return;
   }
@@ -70,7 +70,7 @@ async function buscarCEP() {
     const d = await res.json();
 
     if (d.erro) {
-      erroBox.textContent = '❌ CEP não encontrado. Verifique e tente novamente.';
+      erroBox.textContent = 'CEP não encontrado. Verifique e tente novamente.';
       erroBox.className = 'error show';
       return;
     }
@@ -79,7 +79,7 @@ async function buscarCEP() {
     salvarHist(d.cep, d.localidade, d.uf);
 
   } catch {
-    erroBox.textContent = '❌ Erro ao conectar à API. Verifique sua conexão.';
+    erroBox.textContent = 'Erro ao conectar à API. Verifique sua conexão.';
     erroBox.className = 'error show';
   } finally {
     loader.className = 'loader';
@@ -87,7 +87,7 @@ async function buscarCEP() {
   }
 }
 
-// ── Renderiza resultado na tela ──
+//Renderiza resultado na tela
 function val(v) {
   return v?.trim() ? v : '<span class="empty">Não informado</span>';
 }
@@ -119,4 +119,4 @@ function renderResultado(d) {
 }
 
 // ── Inicialização ──
-renderHist();
+rnderHist();
