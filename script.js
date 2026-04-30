@@ -118,5 +118,5 @@ function renderResultado(d) {
   resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ── Inicialização ──
+//Inicialização
 rnderHist();
